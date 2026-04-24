@@ -33,6 +33,7 @@ a {
     text-decoration: none;
     font-weight: bold;
 }
+
 a:hover {
     color: #e74c3c;
     text-decoration: underline;
@@ -78,11 +79,13 @@ dl {
     padding: 15px;
     margin: 15px 0;
 }
+
 dt {
     font-weight: bold;
     color: #8e44ad;
     font-size: 18px;
 }
+
 dd {
     margin-left: 20px;
     color: #555555;
@@ -108,4 +111,38 @@ th {
     background-color: #34495e;
     color: #ffffff;
     font-size: 18px;
+}
+
+nav a {
+    background-color: #ecf0f1;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid #bdc3c7;
+}
+
+nav a:hover {
+    background-color: #34495e;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+nav > b {
+    color: #e74c3c;
+    font-size: 18px;
+    margin-right: 10px;
+    text-transform: uppercase;
+}
+
+h2 + ul {
+    margin-top: 0; 
+    border-color: #e74c3c; 
+}
+
+h2 + ol {
+    margin-top: 0;
+    border-color: #34495e;
+}
+
+h2 + table {
+    margin-top: 5px;
 }
