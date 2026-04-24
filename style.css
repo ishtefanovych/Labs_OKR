@@ -1,3 +1,4 @@
+/* --- Базові стилі та типографіка --- */
 body {
     background-color: #f0f4f8;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -8,6 +9,53 @@ body {
     margin: 20px;
 }
 
+/* --- Позиціонування (Lab 3) --- */
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: #f0f4f8;
+    padding: 10px 0;
+    border-bottom: 2px solid #bdc3c7;
+}
+
+nav a {
+    background-color: #ecf0f1;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid #bdc3c7;
+    margin: 0 5px;
+}
+
+nav > b {
+    color: #e74c3c;
+    font-size: 18px;
+    margin-right: 10px;
+    text-transform: uppercase;
+}
+
+/* --- Псевдокласи для посилань --- */
+a:link {
+    color: #2980b9;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:visited {
+    color: #8e44ad; 
+}
+
+a:hover {
+    background-color: #34495e;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+a:active {
+    color: #c0392b;
+}
+
+/* --- Заголовки та Псевдоелементи --- */
 h1 {
     font-size: 36px;
     color: #2c3e50 ;
@@ -22,32 +70,35 @@ h2 {
     padding-bottom: 5px;
 }
 
-h3 {
-    font-size: 22px;
-    color: #16a085;
-    font-style: italic;
+/* Псевдоелемент :before додає іконку перед кожним H2 */
+h2::before {
+    content: "🎵 ";
 }
 
-a {
-    color: #2980b9;
-    text-decoration: none;
+/* --- Блочні та рядкові елементи (Lab 3) --- */
+
+/* Плаваючий блок (Float) */
+.floating-box {
+    float: right;
+    width: 250px;
+    background-color: #ffffff;
+    border: 1px solid #bdc3c7;
+    padding: 15px;
+    margin-left: 20px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+    font-size: 14px;
+}
+
+/* Рядковий елемент (Span) */
+span.highlight-span {
+    background-color: #e74c3c;
+    color: white;
+    padding: 2px 6px;
+    border-radius: 4px;
     font-weight: bold;
-}
-
-a:hover {
-    color: #e74c3c;
-    text-decoration: underline;
-}
-
-#special-heading {
-    color: #8e44ad;
     text-transform: uppercase;
-}
-
-.highlight-text {
-    background-color: #f1c40f;
-    padding: 2px 5px;
-    border-radius: 3px;
 }
 
 .important-note {
@@ -55,14 +106,25 @@ a:hover {
     font-weight: bold;
 }
 
+/* Псевдоелемент :after додає значок після важливих нотаток */
+.important-note::after {
+    content: " 📌";
+    color: #e74c3c;
+}
+
+/* --- Списки та Псевдокласи --- */
 ol {
     background-color: #e8f8f5;
     border: 2px solid #1abc9c;
     padding: 20px 20px 20px 50px;
     margin: 15px 0;
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 18px;
-    color: #2c3e50;
+}
+
+/* Псевдоклас :first-child для першого елемента списку */
+ol li:first-child {
+    font-weight: bold;
+    color: #d32f2f;
+    font-size: 110%;
 }
 
 ul {
@@ -70,35 +132,20 @@ ul {
     border: 1px dashed #e67e22;
     padding: 15px 15px 15px 40px;
     margin: 15px 0;
-    font-size: 18px;
 }
 
-dl {
-    background-color: #ebdef0;
-    border-left: 5px solid #9b59b6;
-    padding: 15px;
-    margin: 15px 0;
+/* Сусідні селектори */
+h2 + ul, h2 + ol {
+    margin-top: 0;
 }
 
-dt {
-    font-weight: bold;
-    color: #8e44ad;
-    font-size: 18px;
-}
-
-dd {
-    margin-left: 20px;
-    color: #555555;
-    font-style: italic;
-}
-
+/* --- Таблиці --- */
 table {
     width: 85%;
     margin: 20px auto;
     border-collapse: collapse;
     background-color: #ffffff;
     border: 3px solid #34495e;
-    font-family: Arial, sans-serif;
 }
 
 th, td {
@@ -110,39 +157,4 @@ th, td {
 th {
     background-color: #34495e;
     color: #ffffff;
-    font-size: 18px;
-}
-
-nav a {
-    background-color: #ecf0f1;
-    padding: 5px 10px;
-    border-radius: 5px;
-    border: 1px solid #bdc3c7;
-}
-
-nav a:hover {
-    background-color: #34495e;
-    color: #ffffff;
-    text-decoration: none;
-}
-
-nav > b {
-    color: #e74c3c;
-    font-size: 18px;
-    margin-right: 10px;
-    text-transform: uppercase;
-}
-
-h2 + ul {
-    margin-top: 0; 
-    border-color: #e74c3c; 
-}
-
-h2 + ol {
-    margin-top: 0;
-    border-color: #34495e;
-}
-
-h2 + table {
-    margin-top: 5px;
 }
